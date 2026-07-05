@@ -1,0 +1,352 @@
+{
+  "organization": {
+    "name": "CIVITAS",
+    "tagline": "Intelligence. Technologie. Impact.",
+    "programTitle": "Formations Professionnelles en Intelligence Artificielle",
+    "programSubtitle": "Développez les compétences numériques de demain",
+    "description": "CIVITAS vous accompagne pour maîtriser les technologies d'aujourd'hui et construire les solutions intelligentes de demain. Des formations pratiques, accessibles et orientées résultats pour booster votre carrière ou votre entreprise.",
+    "features": [
+      "Formations pratiques et orientées projets",
+      "Certificat CIVITAS délivré en fin de formation",
+      "Sessions 100% en ligne",
+      "Encadrement par des experts"
+    ],
+    "whyChooseCivitas": [
+      "Formations adaptées au marché africain",
+      "Approche pratique & réelle",
+      "Accompagnement personnalisé",
+      "Communauté active & entraide",
+      "Accès aux ressources & mises à jour"
+    ],
+    "targetAudience": [
+      "Étudiants & jeunes diplômés",
+      "Professionnels en reconversion",
+      "Entrepreneurs & indépendants",
+      "Entreprises & organisations"
+    ],
+    "formatOptions": [
+      { "name": "Speed", "duration": "2 semaines", "billing": "forfait unique" },
+      { "name": "Semi Speed", "duration": "1 mois", "billing": "forfait unique" },
+      { "name": "Standard", "duration": "2 mois", "billing": "tarif mensuel" }
+    ],
+    "contact": {
+      "phones": ["+241 74 34 37 76", "+241 65 45 76 63"],
+      "email": "nzilasamuel51@gmail.com",
+      "website": "civitas-africa.vercel.app",
+      "socials": {
+        "facebook": "CIVITAS AI",
+        "linkedin": "CIVITAS AI",
+        "youtube": "CIVITAS AI",
+        "instagram": "CIVITAS AI",
+        "tiktok": "CIVITAS AI"
+      }
+    }
+  },
+  "formations": [
+    {
+      "id": "marketing-digital-ia",
+      "numero": "01",
+      "title": "Marketing Digital et Communication avec l'IA",
+      "category": "Marketing Digital & IA",
+      "level": "Tous niveaux",
+      "description": "Apprenez à créer des stratégies marketing performantes grâce à l'IA. Générez du contenu de qualité, automatisez vos campagnes et analysez les performances pour développer votre marque ou votre activité.",
+      "highlights": [
+        "Stratégie de contenu avec l'IA",
+        "Copywriting & storytelling",
+        "Réseaux sociaux & publicité assistés par IA",
+        "SEO, analyse & reporting",
+        "Automatisation marketing"
+      ],
+      "pricingFormats": {
+        "speed": { "duration": "2 semaines", "price": 20000, "currency": "FCFA" },
+        "semiSpeed": { "duration": "1 mois", "price": 25000, "currency": "FCFA" },
+        "standard": { "duration": "2 mois", "price": 19000, "unit": "F/mois", "currency": "FCFA" }
+      },
+      "image": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&auto=format&fit=crop&q=80",
+      "fullDescription": "Ce programme forme les créateurs, entrepreneurs et professionnels à exploiter l'intelligence artificielle pour construire une présence de marque forte et rentable. Vous apprendrez à générer du contenu percutant en un temps record, à automatiser vos campagnes publicitaires et à transformer vos données de performance en décisions concrètes pour votre croissance.",
+      "importance": "À l'ère du contenu de masse, l'IA permet de produire plus vite, plus juste et à moindre coût. Les professionnels capables de combiner créativité humaine et outils IA prennent une avance décisive sur leurs concurrents encore attachés aux méthodes manuelles.",
+      "keyConcepts": [
+        "Génération de contenu textuel, visuel et vidéo assistée par IA",
+        "Copywriting persuasif et storytelling de marque",
+        "Automatisation de campagnes publicitaires sur les réseaux sociaux",
+        "SEO augmenté par l'IA et optimisation de la visibilité en ligne",
+        "Reporting automatisé et pilotage des indicateurs de performance",
+        "Outils IA de planification et de gestion de communauté"
+      ],
+      "careers": [
+        "Community Manager augmenté par l'IA",
+        "Chargé(e) de Marketing Digital",
+        "Créateur(trice) de Contenu IA",
+        "Consultant(e) en Stratégie Digitale",
+        "Growth Marketer"
+      ],
+      "globalMarket": "Le marketing assisté par l'IA transforme la manière dont les marques communiquent, avec une adoption massive des outils de génération de contenu et d'automatisation par les entreprises de toutes tailles à travers le monde.",
+      "africanMarket": "En Afrique, les PME et entrepreneurs digitaux utilisent l'IA pour concurrencer de grandes marques avec des budgets limités, en produisant du contenu localisé et en automatisant leur présence sur les réseaux sociaux les plus utilisés du continent.",
+      "instructors": [
+        {
+          "name": "Grace Mabika",
+          "role": "Consultante en Marketing Digital & Formatrice CIVITAS",
+          "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          "name": "Steve Obiang",
+          "role": "Spécialiste Growth Marketing & Automatisation",
+          "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Nadia Koumba",
+          "company": "Boutique en ligne, Libreville",
+          "review": "Grâce à cette formation, j'ai divisé par trois le temps passé sur mes publications tout en doublant mon engagement sur les réseaux sociaux.",
+          "rating": 5,
+          "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "analyse-donnees-business-intelligence",
+      "numero": "02",
+      "title": "Analyse de Données et Business Intelligence",
+      "category": "Data & Business Intelligence",
+      "level": "Tous niveaux",
+      "description": "Transformez les données en décisions stratégiques. Maîtrisez les outils d'analyse, de visualisation et de reporting pour piloter la performance de votre organisation.",
+      "highlights": [
+        "Collecte, nettoyage & analyse de données",
+        "Excel avancé & Power BI",
+        "Tableaux de bord & visualisation",
+        "Reporting automatisé & KPIs",
+        "Analyse prédictive avec l'IA"
+      ],
+      "pricingFormats": {
+        "speed": { "duration": "2 semaines", "price": 30000, "currency": "FCFA" },
+        "semiSpeed": { "duration": "1 mois", "price": 40000, "currency": "FCFA" },
+        "standard": { "duration": "2 mois", "price": 25000, "unit": "F/mois", "currency": "FCFA" }
+      },
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
+      "fullDescription": "Ce programme vous apprend à structurer, analyser et visualiser des données pour en tirer des décisions stratégiques fiables. Des bases du nettoyage de données jusqu'aux tableaux de bord interactifs sous Power BI, vous développerez une véritable culture de la donnée applicable immédiatement en entreprise.",
+      "importance": "Les organisations qui pilotent leurs décisions par la donnée surperforment durablement celles qui s'appuient sur l'intuition seule. Savoir analyser et présenter la donnée est aujourd'hui une compétence transversale indispensable à tout poste de responsabilité.",
+      "keyConcepts": [
+        "Collecte, nettoyage et structuration de jeux de données",
+        "Analyse statistique appliquée avec Excel avancé",
+        "Création de tableaux de bord interactifs avec Power BI",
+        "Automatisation des rapports et suivi des indicateurs clés (KPIs)",
+        "Introduction à l'analyse prédictive assistée par l'IA",
+        "Communication et présentation efficace des résultats de données"
+      ],
+      "careers": [
+        "Analyste de Données",
+        "Chargé(e) de Business Intelligence",
+        "Contrôleur(euse) de Gestion Data-Driven",
+        "Responsable Reporting & KPIs",
+        "Consultant(e) en Pilotage de Performance"
+      ],
+      "globalMarket": "La demande en compétences d'analyse de données et de Business Intelligence continue de croître fortement, portée par la digitalisation des processus de décision dans tous les secteurs d'activité.",
+      "africanMarket": "Les entreprises africaines, des institutions financières aux ONG, investissent de plus en plus dans le pilotage par la donnée pour optimiser leurs opérations, mesurer leur impact et attirer des investisseurs exigeant davantage de transparence.",
+      "instructors": [
+        {
+          "name": "Patrick Ndong",
+          "role": "Data Analyst Senior & Formateur Power BI",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          "name": "Chantal Ella",
+          "role": "Consultante en Business Intelligence chez CIVITAS",
+          "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Junior Mba",
+          "company": "ONG locale, Gabon",
+          "review": "J'ai enfin pu construire des tableaux de bord clairs pour présenter nos résultats à nos partenaires. Un vrai gain de crédibilité pour notre organisation.",
+          "rating": 5,
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "automatisation-agents-ia-avances",
+      "numero": "03",
+      "title": "Automatisation Professionnelle et Agents IA Avancés",
+      "category": "Automatisation & Agents IA",
+      "level": "Intermédiaire",
+      "description": "Automatisez vos tâches répétitives et vos processus métiers. Créez des workflows intelligents et des agents IA qui travaillent pour vous 24h/24.",
+      "highlights": [
+        "Automatisation avec n8n, Make, Zapier",
+        "Intégrations d'APIs & workflows avancés",
+        "Chatbots & assistants intelligents",
+        "Automatisation emails & réseaux sociaux",
+        "Agents IA avancés & outils métiers"
+      ],
+      "pricingFormats": {
+        "speed": { "duration": "2 semaines", "price": 35000, "currency": "FCFA" },
+        "semiSpeed": { "duration": "1 mois", "price": 45000, "currency": "FCFA" },
+        "standard": { "duration": "2 mois", "price": 28000, "unit": "F/mois", "currency": "FCFA" }
+      },
+      "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&auto=format&fit=crop&q=80",
+      "fullDescription": "Ce programme vous apprend à concevoir des workflows automatisés qui font gagner un temps précieux à votre entreprise. Grâce à des outils comme n8n, Make et Zapier, ainsi qu'à des chatbots et agents IA connectés à vos outils métiers, vous automatiserez des tâches répétitives et libérerez du temps pour les activités à forte valeur ajoutée.",
+      "importance": "Automatiser les tâches répétitives n'est plus un luxe réservé aux grandes entreprises : c'est devenu un levier accessible pour toute organisation cherchant à réduire ses coûts opérationnels et à accélérer son exécution.",
+      "keyConcepts": [
+        "Principes de l'automatisation de workflows métiers",
+        "Prise en main des outils n8n, Make et Zapier",
+        "Intégration d'APIs pour connecter des outils entre eux",
+        "Création de chatbots et assistants intelligents",
+        "Automatisation des emails, formulaires et réseaux sociaux",
+        "Introduction aux agents IA appliqués aux processus métiers"
+      ],
+      "careers": [
+        "Spécialiste en Automatisation No-Code",
+        "Concepteur(trice) de Chatbots",
+        "Consultant(e) en Optimisation de Processus",
+        "Assistant(e) Virtuel(le) IA",
+        "Responsable Automatisation d'Entreprise"
+      ],
+      "globalMarket": "Les outils d'automatisation no-code et les agents IA connaissent une adoption rapide dans les PME comme dans les grands groupes, portés par la promesse de réduire drastiquement les tâches manuelles répétitives.",
+      "africanMarket": "Pour les PME africaines en forte croissance mais aux équipes réduites, l'automatisation permet de structurer les opérations et de servir davantage de clients sans alourdir les coûts de fonctionnement.",
+      "instructors": [
+        {
+          "name": "Yannick Mboumba",
+          "role": "Spécialiste Automatisation No-Code & Formateur CIVITAS",
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          "name": "Sarah Ondo",
+          "role": "Consultante en Transformation des Processus Métiers",
+          "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Cédric Ngoua",
+          "company": "Agence événementielle, Libreville",
+          "review": "Nos formulaires clients, nos rappels et nos relances sont désormais automatisés. On a gagné plusieurs heures par semaine sans embaucher personne.",
+          "rating": 5,
+          "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "developpement-applications-ia",
+      "numero": "04",
+      "title": "Développement d'Applications IA",
+      "category": "Génie Logiciel IA",
+      "level": "Intermédiaire",
+      "description": "Apprenez à développer des applications intelligentes intégrant l'IA. De la conception au déploiement, construisez des solutions modernes et performantes.",
+      "highlights": [
+        "Python, APIs & frameworks modernes",
+        "Développement d'applications IA (FastAPI, Django)",
+        "Intégration de modèles IA (API, OpenAI...)",
+        "Bases de données & déploiement",
+        "Projets IA de bout en bout"
+      ],
+      "pricingFormats": {
+        "speed": { "duration": "2 semaines", "price": 50000, "currency": "FCFA" },
+        "semiSpeed": { "duration": "1 mois", "price": 70000, "currency": "FCFA" },
+        "standard": { "duration": "2 mois", "price": 40000, "unit": "F/mois", "currency": "FCFA" }
+      },
+      "image": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=1200&auto=format&fit=crop&q=80",
+      "fullDescription": "Ce programme forme des développeurs capables de concevoir des applications web modernes intégrant nativement l'intelligence artificielle. De la maîtrise de Python et des frameworks comme FastAPI et Django jusqu'à l'intégration de modèles IA via API, vous mènerez un projet complet de la conception au déploiement en production.",
+      "importance": "Savoir intégrer un modèle d'IA dans une application réelle est devenu une compétence recherchée par toutes les entreprises souhaitant transformer leurs services numériques. Les développeurs capables de livrer des produits IA de bout en bout sont particulièrement rares et valorisés.",
+      "keyConcepts": [
+        "Fondamentaux de Python appliqués au développement d'applications",
+        "Construction d'APIs avec FastAPI et Django",
+        "Intégration de modèles IA via API (OpenAI et équivalents)",
+        "Conception et gestion de bases de données",
+        "Déploiement d'applications en production",
+        "Méthodologie de projet IA de bout en bout"
+      ],
+      "careers": [
+        "Développeur(euse) Full-Stack IA",
+        "Développeur(euse) Backend Python",
+        "Ingénieur(e) Intégration IA",
+        "Concepteur(trice) d'Applications Intelligentes",
+        "Chef(fe) de Projet Technique IA"
+      ],
+      "globalMarket": "L'intégration de l'IA dans les applications d'entreprise est aujourd'hui l'un des axes de développement logiciel les plus dynamiques, avec une demande soutenue pour les développeurs capables de connecter des modèles IA à des produits concrets.",
+      "africanMarket": "Le développement local d'applications intelligentes permet aux startups et institutions africaines de créer des solutions adaptées à leurs réalités, sans dépendre uniquement de logiciels étrangers coûteux.",
+      "instructors": [
+        {
+          "name": "Steevy Nzue",
+          "role": "Développeur Full-Stack IA & Formateur CIVITAS",
+          "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          "name": "Larissa Boukandou",
+          "role": "Ingénieure Logicielle spécialisée en intégration IA",
+          "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&auto=format&fit=crop&q=80"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Farel Iwenga",
+          "company": "Startup Tech, Libreville",
+          "review": "En quelques semaines, j'ai pu construire et déployer ma première application intégrant l'IA. La formation est très concrète, avec un vrai projet à livrer à la fin.",
+          "rating": 5,
+          "avatar": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=100&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "ingenierie-agents-ia-autonomes",
+      "numero": "05",
+      "title": "Ingénierie des Agents IA Autonomes",
+      "category": "Agents IA Autonomes",
+      "level": "Avancé",
+      "description": "Concevez des agents IA autonomes capables de comprendre, décider et agir pour résoudre des tâches complexes de manière intelligente.",
+      "highlights": [
+        "Architecture des agents IA",
+        "Mémoire, outils & planification",
+        "Multi-agents & orchestration",
+        "MCP (Model Context Protocol) & LangChain",
+        "Déploiement d'agents autonomes"
+      ],
+      "pricingFormats": {
+        "speed": { "duration": "2 semaines", "price": 60000, "currency": "FCFA" },
+        "semiSpeed": { "duration": "1 mois", "price": 80000, "currency": "FCFA" },
+        "standard": { "duration": "2 mois", "price": 45000, "unit": "F/mois", "currency": "FCFA" }
+      },
+      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop&q=80",
+      "fullDescription": "Ce programme avancé forme des ingénieurs capables de concevoir des agents IA autonomes : des systèmes dotés de mémoire, d'outils et de capacités de planification qui peuvent décider et agir seuls pour accomplir des tâches complexes. Vous apprendrez à orchestrer plusieurs agents entre eux et à déployer des architectures robustes en environnement réel.",
+      "importance": "Les agents autonomes représentent la prochaine étape après les simples chatbots : des systèmes capables de raisonner, planifier et exécuter des tâches sans supervision constante. Maîtriser leur conception place les ingénieurs à l'avant-garde de l'innovation IA.",
+      "keyConcepts": [
+        "Architecture générale d'un agent IA autonome",
+        "Gestion de la mémoire, des outils et de la planification d'un agent",
+        "Conception d'architectures multi-agents et orchestration",
+        "Utilisation du Model Context Protocol (MCP) et de LangChain",
+        "Connexion des agents à des outils et systèmes externes",
+        "Déploiement et supervision d'agents autonomes en production"
+      ],
+      "careers": [
+        "Ingénieur(e) en Agents IA Autonomes",
+        "Architecte de Systèmes Multi-Agents",
+        "Développeur(euse) LangChain / MCP",
+        "Consultant(e) en Solutions IA Avancées",
+        "Chef(fe) de Projet R&D en IA Autonome"
+      ],
+      "globalMarket": "Les architectures d'agents autonomes s'imposent comme la nouvelle frontière de l'intelligence artificielle appliquée, avec un intérêt croissant des entreprises pour des systèmes capables d'agir sans intervention humaine constante.",
+      "africanMarket": "Former des ingénieurs africains à la conception d'agents autonomes permet au continent de ne pas seulement consommer ces technologies, mais de participer activement à leur développement et à leur adaptation aux besoins locaux.",
+      "instructors": [
+        {
+          "name": "Christ Allogho",
+          "role": "Ingénieur en Agents IA & Formateur Senior CIVITAS",
+          "avatar": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=150&auto=format&fit=crop&q=80"
+        },
+        {
+          "name": "Prisca Ntoutoume",
+          "role": "Architecte de Systèmes Multi-Agents",
+          "avatar": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=150&auto=format&fit=crop&q=80"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "Landry Obame",
+          "company": "Cabinet de conseil, Gabon",
+          "review": "Formation exigeante mais extrêmement enrichissante. J'ai pu concevoir un premier agent autonome capable de gérer une partie de notre veille métier en toute autonomie.",
+          "rating": 5,
+          "avatar": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=100&auto=format&fit=crop&q=80"
+        }
+      ]
+    }
+  ]
+}

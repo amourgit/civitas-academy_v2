@@ -1,0 +1,6 @@
+{
+  "name": "CIVITAS Academy",
+  "description": "Portail d'inscription aux formations d'excellence en intelligence artificielle, automatisation et technologies avancées par CIVITAS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
