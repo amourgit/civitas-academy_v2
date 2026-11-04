@@ -22,6 +22,7 @@ export interface PricingFormat {
   price: number;
   currency: string;
   unit?: string;
+  hours?: number;
 }
 
 export interface PricingFormats {
@@ -54,16 +55,22 @@ export interface Course {
   pricingFormats: PricingFormats;
 }
 
+export type ProfileType = 'student' | 'employee' | 'entrepreneur' | 'freelance' | 'retraining' | 'jobseeker' | 'other' | '';
+
+export type FundingType = 'cpf' | 'opco' | 'pole_emploi' | 'personal' | '';
+
+export type FormulaType = 'speed' | 'semiSpeed' | 'standard';
+
 export interface ParticipantForm {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
-  profileType: string;
-  fundingType: string;
+  profileType: ProfileType;
+  fundingType: FundingType;
   motivation: string;
   agreedToTerms: boolean;
-  selectedFormula?: 'speed' | 'semiSpeed' | 'standard';
+  selectedFormula?: FormulaType;
   generatedPdfBase64?: string;
   pdfReferenceId?: string;
 }

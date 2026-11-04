@@ -14,6 +14,7 @@ import { Course, ParticipantForm } from '../types';
 import { OfficialAttestation } from './OfficialAttestation';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
+import { getFormulaLabel, getFundingLabel, getProfileLabel } from '../formLabels';
 
 interface SuccessViewProps {
   selectedCourse: Course;
@@ -49,26 +50,7 @@ export const SuccessView: React.FC<SuccessViewProps> = ({
     });
   }, []);
 
-  const fundingLabel = (type: string) => {
-    switch (type) {
-      case 'cpf': return 'Financement Professionnel Certifié (CIVITAS)';
-      case 'opco': return 'Financement Employeur / Convention Entreprise';
-      case 'pole_emploi': return 'Financement Organisme Public / Aide Nationale';
-      case 'personal': return 'Financement Personnel (Étalonnement mensuel)';
-      default: return 'Financement Personnel';
-    }
-  };
 
-  const profileLabel = (type: string) => {
-    switch (type) {
-      case 'student': return 'Étudiant';
-      case 'employee': return 'Salarié';
-      case 'jobseeker': return 'Demandeur d\'emploi';
-      case 'freelance': return 'Indépendant / Dirigeant';
-      case 'retraining': return 'En reconversion';
-      default: return 'Autre';
-    }
-  };
 
   const [isIframe, setIsIframe] = useState(false);
   const [showPrintIframeModal, setShowPrintIframeModal] = useState(false);
@@ -178,17 +160,11 @@ export const SuccessView: React.FC<SuccessViewProps> = ({
     price: selectedCourse.price,
     duration: selectedCourse.duration,
     currency: 'FCFA',
-    unit: selectedFormulaKey === 'standard' ? 'F/mois' : ''
+    unit: selectedFormulaKey === 'standard' ? 'F/mois' : '',
+    hours: selectedCourse.hours
   };
 
-  const formulaLabel = (key: string) => {
-    switch (key) {
-      case 'speed': return 'Speed (2 semaines)';
-      case 'semiSpeed': return 'Semi Speed (1 mois)';
-      case 'standard': return 'Standard (2 mois)';
-      default: return 'Standard (2 mois)';
-    }
-  };
+
 
   const formattedPrice = `${activePricing.price.toLocaleString('fr-FR')} ${activePricing.currency}${activePricing.unit ? ' / ' + activePricing.unit : ''}`;
 
@@ -344,7 +320,7 @@ export const SuccessView: React.FC<SuccessViewProps> = ({
                   {selectedCourse.title}
                 </span>
                 <span className="text-zinc-500 block mt-1 font-semibold text-indigo-600">
-                  {formulaLabel(selectedFormulaKey)} — {selectedCourse.hours}h de cours
+                  {getFormulaLabel(selectedFormulaKey, true)} — {activePricing.hours || selectedCourse.hours}h de cours
                 </span>
               </div>
 
@@ -355,7 +331,7 @@ export const SuccessView: React.FC<SuccessViewProps> = ({
                   <span className="font-semibold text-zinc-800 block">
                     {participantDetails.lastName.toUpperCase()} {participantDetails.firstName}
                   </span>
-                  <span className="text-zinc-500 font-medium">{profileLabel(participantDetails.profileType)}</span>
+                  <span className="text-zinc-500 font-medium">{getProfileLabel(participantDetails.profileType, true)}</span>
                 </div>
                 <div>
                   <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">DATE DE SOUMISSION</span>
@@ -378,14 +354,14 @@ export const SuccessView: React.FC<SuccessViewProps> = ({
               {/* Financial method */}
               <div className="border-t border-zinc-100 pt-4">
                 <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-1">MODE DE FINANCEMENT</span>
-                <span className="text-zinc-800 font-semibold block">{fundingLabel(participantDetails.fundingType)}</span>
+                <span className="text-zinc-800 font-semibold block">{getFundingLabel(participantDetails.fundingType, false, true)}</span>
               </div>
 
               {/* Financial Balance Breakdown */}
               <div className="border-t border-dashed border-zinc-200 pt-4 mt-6 bg-zinc-50/50 -mx-6 px-6 py-4 rounded-b-2xl">
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between text-zinc-500">
-                    <span>Frais de scolarité ({formulaLabel(selectedFormulaKey)}) :</span>
+                    <span>Frais de scolarité ({getFormulaLabel(selectedFormulaKey, true)}) :</span>
                     <span className="font-semibold text-zinc-800">{formattedPrice}</span>
                   </div>
                   <div className="flex justify-between text-emerald-700 font-semibold">

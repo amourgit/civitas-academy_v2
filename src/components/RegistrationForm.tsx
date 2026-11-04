@@ -14,6 +14,7 @@ import { Course, ParticipantForm } from '../types';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import { OfficialAttestation } from './OfficialAttestation';
+import { getFundingLabel, getProfileOptions, getFundingOptions, getFormulaLabel, getFormulaOptions } from '../formLabels';
 
 interface RegistrationFormProps {
   selectedCourse: Course;
@@ -300,7 +301,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         price: selectedCourse.price,
         duration: selectedCourse.duration,
         currency: 'FCFA',
-        unit: selectedFormulaKey === 'standard' ? 'F/mois' : ''
+        unit: selectedFormulaKey === 'standard' ? 'F/mois' : '',
+        hours: selectedCourse.hours
       };
 
       const fileName = `Attestation_CIVITAS_${formData.lastName.toUpperCase()}_${formData.firstName}.pdf`;
@@ -321,7 +323,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         courseTitle: selectedCourse.title,
         coursePrice: String(activePricing.price),
         courseDuration: activePricing.duration,
-        courseHours: String(selectedCourse.hours),
+        courseHours: String(activePricing.hours || selectedCourse.hours),
         selectedFormula: selectedFormulaKey,
         submittedAt: new Date().toISOString(),
         pdfReferenceId: referenceId,
@@ -372,15 +374,16 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
       price: selectedCourse.price,
       duration: selectedCourse.duration,
       currency: 'FCFA',
-      unit: selectedFormulaKey === 'standard' ? 'F/mois' : ''
+      unit: selectedFormulaKey === 'standard' ? 'F/mois' : '',
+      hours: selectedCourse.hours
     };
-    
+
     const priceText = `${activePricing.price.toLocaleString('fr-FR')} ${activePricing.currency}${activePricing.unit ? '/' + activePricing.unit : ''}`;
 
     switch (formData.fundingType) {
       case 'cpf':
         return {
-          title: 'Financement Professionnel Certifié (CIVITAS)',
+          title: getFundingLabel('cpf', false, true),
           desc: 'Votre dossier sera traité par notre commission. Prise en charge estimée à 100% (reste à charge : 0 FCFA sous réserve d\'éligibilité).',
           costLabel: 'Prise en charge prévisionnelle',
           costValue: `-${priceText}`,
@@ -388,7 +391,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         };
       case 'opco':
         return {
-          title: 'Financement Employeur / Convention d\'entreprise',
+          title: getFundingLabel('opco', false, true),
           desc: 'Une facture proforma et une convention de formation professionnelle CIVITAS seront envoyées à votre employeur pour prise en charge.',
           costLabel: 'Quote-part Entreprise',
           costValue: `-${priceText}`,
@@ -396,7 +399,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         };
       case 'pole_emploi':
         return {
-          title: 'Aide Publique ou Convention Nationale (Gabon/Afrique)',
+          title: getFundingLabel('pole_emploi', false, true),
           desc: 'Demande de subvention de formation envoyée à l\'organisme partenaire pour validation de prise en charge.',
           costLabel: 'Aide accordée estimée',
           costValue: `-${priceText}`,
@@ -404,7 +407,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         };
       case 'personal':
         return {
-          title: 'Financement Personnel (Étalonnement sans frais)',
+          title: getFundingLabel('personal', false, true),
           desc: 'Règlement à votre charge directe. Possibilité d\'étalonner en plusieurs versements mensuels ou forfait unique.',
           costLabel: 'Facilités de paiement',
           costValue: selectedFormulaKey === 'standard' ? 'Étalonné mensuellement' : 'Règlement unique',
@@ -485,11 +488,18 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 <span>Formule de formation choisie <span className="text-red-500">*</span></span>
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { key: 'speed', label: 'Speed', duration: selectedCourse.pricingFormats?.speed.duration || '2 semaines', desc: 'Apprentissage intensif', price: selectedCourse.pricingFormats?.speed.price, currency: selectedCourse.pricingFormats?.speed.currency, unit: '' },
-                  { key: 'semiSpeed', label: 'Semi Speed', duration: selectedCourse.pricingFormats?.semiSpeed.duration || '1 mois', desc: 'Rythme modéré', price: selectedCourse.pricingFormats?.semiSpeed.price, currency: selectedCourse.pricingFormats?.semiSpeed.currency, unit: '' },
-                  { key: 'standard', label: 'Standard', duration: selectedCourse.pricingFormats?.standard.duration || '2 mois', desc: 'Rythme continu', price: selectedCourse.pricingFormats?.standard.price, currency: selectedCourse.pricingFormats?.standard.currency, unit: selectedCourse.pricingFormats?.standard.unit || 'F/mois' }
-                ].map((formula) => {
+                {getFormulaOptions().map((formulaOption) => {
+                  const pricing = selectedCourse.pricingFormats?.[formulaOption.value as keyof typeof selectedCourse.pricingFormats];
+                  const formula = {
+                    key: formulaOption.value,
+                    label: formulaOption.label.replace('Formule ', '').replace(/ \(.+\)/, ''),
+                    duration: pricing?.duration || '2 mois',
+                    desc: formulaOption.value === 'speed' ? 'Apprentissage intensif' : formulaOption.value === 'semiSpeed' ? 'Rythme modéré' : 'Rythme continu',
+                    price: pricing?.price,
+                    currency: pricing?.currency,
+                    unit: pricing?.unit || '',
+                    hours: pricing?.hours
+                  };
                   const isSelected = (formData.selectedFormula || 'standard') === formula.key;
                   return (
                     <div
@@ -508,7 +518,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                         </div>
                       </div>
                       <span className="text-[10px] text-indigo-600 font-bold mb-1">{formula.duration}</span>
-                      <span className="text-[10px] text-zinc-500 leading-tight mb-3">{formula.desc}</span>
+                      <span className="text-[10px] text-zinc-500 leading-tight mb-2">{formula.desc}</span>
+                      <span className="text-[9px] text-zinc-400 font-medium">{formula.hours || selectedCourse.hours}h de formation</span>
                       <div className="mt-auto pt-2 border-t border-zinc-150 flex items-baseline gap-1">
                         <span className="text-sm font-extrabold text-zinc-950">
                           {formula.price?.toLocaleString('fr-FR')}
@@ -698,12 +709,9 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   } focus:outline-none focus:ring-2`}
                 >
                   <option value="">Sélectionnez votre situation actuelle</option>
-                  <option value="student">Étudiant (Université, École)</option>
-                  <option value="employee">Salarié (CDI, CDD, Intérim)</option>
-                  <option value="jobseeker">Demandeur d'emploi (Inscrit France Travail)</option>
-                  <option value="freelance">Indépendant / Dirigeant d'entreprise</option>
-                  <option value="retraining">En reconversion professionnelle</option>
-                  <option value="other">Autre situation</option>
+                  {getProfileOptions().map((opt) => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
                 </select>
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-400 h-0 w-0" />
               </div>
@@ -738,10 +746,9 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   } focus:outline-none focus:ring-2`}
                 >
                   <option value="">Sélectionnez une option d'aide au financement</option>
-                  <option value="cpf">Mon Compte Formation (CPF) - État Français</option>
-                  <option value="pole_emploi">Financement Pôle Emploi (AIF)</option>
-                  <option value="opco">Financement Employeur / OPCO (FNE)</option>
-                  <option value="personal">Financement Personnel (Étalonnement 3x sans frais)</option>
+                  {getFundingOptions().map((opt) => (
+                    <option key={opt.value} value={opt.value}>{opt.label}</option>
+                  ))}
                 </select>
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-400 h-0 w-0" />
               </div>
@@ -870,7 +877,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
               <div>
                 <span className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Durée certifiante</span>
                 <span className="text-white font-semibold">
-                  {selectedCourse.pricingFormats?.[formData.selectedFormula || 'standard']?.duration || selectedCourse.duration} ({selectedCourse.hours}h)
+                  {selectedCourse.pricingFormats?.[formData.selectedFormula || 'standard']?.duration || selectedCourse.duration} ({selectedCourse.pricingFormats?.[formData.selectedFormula || 'standard']?.hours || selectedCourse.hours}h)
                 </span>
               </div>
               <div>

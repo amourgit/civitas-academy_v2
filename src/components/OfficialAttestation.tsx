@@ -6,6 +6,7 @@
 import React from 'react';
 import { Course, ParticipantForm } from '../types';
 import civitasLogo from '../assets/images/civitas_logo_1783238878219.png';
+import { getFormulaLabel, getFundingLabel, getProfileLabel } from '../formLabels';
 
 interface OfficialAttestationProps {
   selectedCourse: Course;
@@ -25,38 +26,11 @@ export const OfficialAttestation: React.FC<OfficialAttestationProps> = ({
     price: selectedCourse.price,
     duration: selectedCourse.duration,
     currency: 'FCFA',
-    unit: selectedFormulaKey === 'standard' ? 'F/mois' : ''
+    unit: selectedFormulaKey === 'standard' ? 'F/mois' : '',
+    hours: selectedCourse.hours
   };
 
-  const formulaLabel = (key: string) => {
-    switch (key) {
-      case 'speed': return 'Formule Intensif (Speed - 2 semaines)';
-      case 'semiSpeed': return 'Formule Accéléré (Semi Speed - 1 mois)';
-      case 'standard': return 'Formule Standard (2 mois)';
-      default: return 'Formule Standard (2 mois)';
-    }
-  };
 
-  const fundingLabel = (type: string) => {
-    switch (type) {
-      case 'cpf': return 'Financement Professionnel Certifié (CIVITAS)';
-      case 'opco': return 'Financement Employeur (Facture Proforma / OPCO)';
-      case 'pole_emploi': return 'Financement Public Partner / Aide Nationale';
-      case 'personal': return 'Financement Personnel (Facilités d\'étalement)';
-      default: return 'Financement Personnel';
-    }
-  };
-
-  const profileLabel = (type: string) => {
-    switch (type) {
-      case 'student': return 'Étudiant(e)';
-      case 'employee': return 'Salarié(e) / Professionnel';
-      case 'jobseeker': return 'Demandeur d\'emploi';
-      case 'freelance': return 'Indépendant / Chef d\'entreprise';
-      case 'retraining': return 'En reconversion professionnelle';
-      default: return 'Candidat';
-    }
-  };
 
   const formattedPrice = `${activePricing.price.toLocaleString('fr-FR')} ${activePricing.currency}${activePricing.unit ? ' / ' + activePricing.unit : ''}`;
 
@@ -172,7 +146,7 @@ export const OfficialAttestation: React.FC<OfficialAttestationProps> = ({
             </div>
             <div className="flex justify-start gap-4">
               <span className="w-24 shrink-0" style={{ color: '#71717a' }}>Profil Actuel :</span>
-              <span className="font-semibold" style={{ color: '#27272a' }}>{profileLabel(participantDetails.profileType)}</span>
+              <span className="font-semibold" style={{ color: '#27272a' }}>{getProfileLabel(participantDetails.profileType)}</span>
             </div>
             <div className="flex justify-start gap-4">
               <span className="w-24 shrink-0" style={{ color: '#71717a' }}>Adresse E-mail :</span>
@@ -208,10 +182,10 @@ export const OfficialAttestation: React.FC<OfficialAttestationProps> = ({
                 {selectedCourse.title}
               </td>
               <td className="p-2 font-bold" style={{ border: '1px solid #d4d4d8', color: '#4338ca' }}>
-                {formulaLabel(selectedFormulaKey)}
+                {getFormulaLabel(selectedFormulaKey)}
               </td>
               <td className="p-2" style={{ border: '1px solid #d4d4d8' }}>
-                {selectedCourse.hours} heures (Théorie & Ateliers)
+                {activePricing.hours || selectedCourse.hours} heures (Théorie & Ateliers)
               </td>
               <td className="p-2 font-extrabold" style={{ border: '1px solid #d4d4d8', color: '#09090b' }}>
                 {formattedPrice}
@@ -236,7 +210,7 @@ export const OfficialAttestation: React.FC<OfficialAttestationProps> = ({
             <strong>Lieu des cours : </strong> 100% en ligne via notre classe virtuelle synchrone et notre plateforme e-learning interactive.
           </p>
           <p>
-            <strong>Mode de Prise en charge : </strong> {fundingLabel(participantDetails.fundingType)}
+            <strong>Mode de Prise en charge : </strong> {getFundingLabel(participantDetails.fundingType)}
           </p>
         </div>
 
@@ -351,7 +325,7 @@ export const OfficialAttestation: React.FC<OfficialAttestationProps> = ({
         }}
       >
         <p>
-          CIVITAS Academy Africa — SAS au capital de 10 000 000 FCFA — Enregistrement N° GAB-2026-B — Libreville, Gabon
+          CIVITAS — SAS au capital de 1 000 000 FCFA — Libreville, Gabon
         </p>
         <p>
           Document certifié conforme et protégé par signature électronique sécurisée. ID: {referenceId.split('-')[2]}

@@ -1,0 +1,77 @@
+{
+  "profiles": {
+    "student": {
+      "label": "Étudiant(e)",
+      "shortLabel": "Étudiant"
+    },
+    "employee": {
+      "label": "Salarié(e) / Professionnel",
+      "shortLabel": "Salarié"
+    },
+    "entrepreneur": {
+      "label": "Entrepreneur / Chef d'entreprise",
+      "shortLabel": "Entrepreneur"
+    },
+    "freelance": {
+      "label": "Indépendant",
+      "shortLabel": "Indépendant"
+    },
+    "retraining": {
+      "label": "En reconversion professionnelle",
+      "shortLabel": "En reconversion"
+    },
+    "jobseeker": {
+      "label": "Demandeur d'emploi",
+      "shortLabel": "Demandeur d'emploi"
+    },
+    "default": {
+      "label": "Candidat",
+      "shortLabel": "Autre"
+    }
+  },
+  "fundingTypes": {
+    "personal": {
+      "label": "Financement Personnel",
+      "shortLabel": "Financement Personnel",
+      "longLabel": "Financement Personnel (Facilités d'étalement)"
+    },
+    "cpf": {
+      "label": "Mon Compte Formation (CPF) - État Français",
+      "shortLabel": "Financement CPF",
+      "longLabel": "Financement Professionnel Certifié (CIVITAS)"
+    },
+    "opco": {
+      "label": "Financement Employeur / OPCO (FNE)",
+      "shortLabel": "Financement Employeur",
+      "longLabel": "Financement Employeur (Facture Proforma / OPCO)"
+    },
+    "pole_emploi": {
+      "label": "Financement Pôle Emploi (AIF)",
+      "shortLabel": "Aide Nationale",
+      "longLabel": "Financement Public Partner / Aide Nationale"
+    },
+    "default": {
+      "label": "Financement Personnel",
+      "shortLabel": "Financement Personnel",
+      "longLabel": "Financement Personnel"
+    }
+  },
+  "formulas": {
+    "speed": {
+      "label": "Formule Intensif (Speed - 2 semaines)",
+      "shortLabel": "Speed (2 semaines)"
+    },
+    "semiSpeed": {
+      "label": "Formule Accéléré (Semi Speed - 1 mois)",
+      "shortLabel": "Semi Speed (1 mois)"
+    },
+    "standard": {
+      "label": "Formule Standard (2 mois)",
+      "shortLabel": "Standard (2 mois)"
+    },
+    "default": {
+      "label": "Formule Standard (2 mois)",
+      "shortLabel": "Standard (2 mois)"
+    }
+  }
+}

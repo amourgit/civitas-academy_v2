@@ -58,9 +58,9 @@
         "Automatisation marketing"
       ],
       "pricingFormats": {
-        "speed": { "duration": "2 semaines", "price": 20000, "currency": "FCFA" },
-        "semiSpeed": { "duration": "1 mois", "price": 25000, "currency": "FCFA" },
-        "standard": { "duration": "2 mois", "price": 19000, "unit": "F/mois", "currency": "FCFA" }
+        "speed": { "duration": "2 semaines", "price": 20000, "currency": "FCFA", "hours": 56 },
+        "semiSpeed": { "duration": "1 mois", "price": 25000, "currency": "FCFA", "hours": 80 },
+        "standard": { "duration": "2 mois", "price": 19000, "unit": "F/mois", "currency": "FCFA", "hours": 120 }
       },
       "image": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&auto=format&fit=crop&q=80",
       "fullDescription": "Ce programme forme les créateurs, entrepreneurs et professionnels à exploiter l'intelligence artificielle pour construire une présence de marque forte et rentable. Vous apprendrez à générer du contenu percutant en un temps record, à automatiser vos campagnes publicitaires et à transformer vos données de performance en décisions concrètes pour votre croissance.",
@@ -119,9 +119,9 @@
         "Analyse prédictive avec l'IA"
       ],
       "pricingFormats": {
-        "speed": { "duration": "2 semaines", "price": 30000, "currency": "FCFA" },
-        "semiSpeed": { "duration": "1 mois", "price": 40000, "currency": "FCFA" },
-        "standard": { "duration": "2 mois", "price": 25000, "unit": "F/mois", "currency": "FCFA" }
+        "speed": { "duration": "2 semaines", "price": 30000, "currency": "FCFA", "hours": 60 },
+        "semiSpeed": { "duration": "1 mois", "price": 40000, "currency": "FCFA", "hours": 96 },
+        "standard": { "duration": "2 mois", "price": 25000, "unit": "F/mois", "currency": "FCFA", "hours": 160 }
       },
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
       "fullDescription": "Ce programme vous apprend à structurer, analyser et visualiser des données pour en tirer des décisions stratégiques fiables. Des bases du nettoyage de données jusqu'aux tableaux de bord interactifs sous Power BI, vous développerez une véritable culture de la donnée applicable immédiatement en entreprise.",
@@ -180,9 +180,9 @@
         "Agents IA avancés & outils métiers"
       ],
       "pricingFormats": {
-        "speed": { "duration": "2 semaines", "price": 35000, "currency": "FCFA" },
-        "semiSpeed": { "duration": "1 mois", "price": 45000, "currency": "FCFA" },
-        "standard": { "duration": "2 mois", "price": 28000, "unit": "F/mois", "currency": "FCFA" }
+        "speed": { "duration": "2 semaines", "price": 35000, "currency": "FCFA", "hours": 40 },
+        "semiSpeed": { "duration": "1 mois", "price": 45000, "currency": "FCFA", "hours": 80 },
+        "standard": { "duration": "2 mois", "price": 28000, "unit": "F/mois", "currency": "FCFA", "hours": 160 }
       },
       "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&auto=format&fit=crop&q=80",
       "fullDescription": "Ce programme vous apprend à concevoir des workflows automatisés qui font gagner un temps précieux à votre entreprise. Grâce à des outils comme n8n, Make et Zapier, ainsi qu'à des chatbots et agents IA connectés à vos outils métiers, vous automatiserez des tâches répétitives et libérerez du temps pour les activités à forte valeur ajoutée.",
@@ -241,9 +241,9 @@
         "Projets IA de bout en bout"
       ],
       "pricingFormats": {
-        "speed": { "duration": "2 semaines", "price": 50000, "currency": "FCFA" },
-        "semiSpeed": { "duration": "1 mois", "price": 70000, "currency": "FCFA" },
-        "standard": { "duration": "2 mois", "price": 40000, "unit": "F/mois", "currency": "FCFA" }
+        "speed": { "duration": "2 semaines", "price": 50000, "currency": "FCFA", "hours": 48 },
+        "semiSpeed": { "duration": "1 mois", "price": 70000, "currency": "FCFA", "hours": 96 },
+        "standard": { "duration": "2 mois", "price": 40000, "unit": "F/mois", "currency": "FCFA", "hours": 192 }
       },
       "image": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=1200&auto=format&fit=crop&q=80",
       "fullDescription": "Ce programme forme des développeurs capables de concevoir des applications web modernes intégrant nativement l'intelligence artificielle. De la maîtrise de Python et des frameworks comme FastAPI et Django jusqu'à l'intégration de modèles IA via API, vous mènerez un projet complet de la conception au déploiement en production.",
@@ -302,9 +302,9 @@
         "Déploiement d'agents autonomes"
       ],
       "pricingFormats": {
-        "speed": { "duration": "2 semaines", "price": 60000, "currency": "FCFA" },
-        "semiSpeed": { "duration": "1 mois", "price": 80000, "currency": "FCFA" },
-        "standard": { "duration": "2 mois", "price": 45000, "unit": "F/mois", "currency": "FCFA" }
+        "speed": { "duration": "2 semaines", "price": 60000, "currency": "FCFA", "hours": 40 },
+        "semiSpeed": { "duration": "1 mois", "price": 80000, "currency": "FCFA", "hours": 96 },
+        "standard": { "duration": "2 mois", "price": 45000, "unit": "F/mois", "currency": "FCFA", "hours": 192 }
       },
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&auto=format&fit=crop&q=80",
       "fullDescription": "Ce programme avancé forme des ingénieurs capables de concevoir des agents IA autonomes : des systèmes dotés de mémoire, d'outils et de capacités de planification qui peuvent décider et agir seuls pour accomplir des tâches complexes. Vous apprendrez à orchestrer plusieurs agents entre eux et à déployer des architectures robustes en environnement réel.",
